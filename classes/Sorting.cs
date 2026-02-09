@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Security.Cryptography;
 
 namespace ConsoleApp.CodeClass
 {
@@ -70,6 +71,67 @@ namespace ConsoleApp.CodeClass
             foreach (var el in arr)
             {
                 Console.WriteLine(el);
+            }
+        }
+
+        public void MergeSort(int[] arr, int low, int high)
+        {
+
+            if (low >= high)
+            {
+                return; //base case
+            }
+
+            int mid = (low + high) / 2;
+
+            MergeSort(arr,low,mid);
+
+            MergeSort(arr,mid+1,high);
+
+            Merge(arr,low,mid,high); 
+        }
+
+        public void Merge(int[] arr, int low, int mid, int high)
+        {
+            int[] temp = new int[high];
+
+            int left = low;
+            int right = mid + 1;
+            int i = 0;
+
+            //Comparing the divided array and merging them back
+            while (left <= mid && right <= high)
+            {
+                if (arr[left] <= arr[right])
+                {
+                    temp[i] = arr[left];
+                    left++; i++;
+                } else
+                {
+                    temp[i] = arr[right];
+                    right++; i++;
+                }
+            }
+
+            //Copying the left elements from the left array 
+            while (left <= mid)
+            {
+                temp[i] = arr[left];
+                left++;
+                i++;
+            }
+
+            //Copying the left elements from the right array
+            while (right <= high)
+            {
+                temp[i] = arr[right];
+                right++;  
+                i++;
+            }
+
+            for (int j = low; j < high; j++)
+            {
+                arr[j] = temp[j-low];
             }
         }
     }
