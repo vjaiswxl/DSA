@@ -134,5 +134,10 @@ namespace ConsoleApp.CodeClass
                 arr[j] = temp[j-low];
             }
         }
+
+        public void QuickSort(int[] arr)
+        {
+            
+        }
     }
 }

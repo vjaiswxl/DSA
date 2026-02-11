@@ -27,7 +27,7 @@ namespace ConsoleApp
             int[] highLowArr = [10, 5, 10, 15, 10, 5];
             int[] numsConsecutive = [2, 20, 4, 10, 3, 4, 5];
             int[] unsortedArr = [13, 46, 24, 52, 20, 9];
-            List<int> numsList = new List<int> { 0, 1, 2, 4, 5, 6 };
+            List<int> numsList = new List<int> { 1, 2, 3, 4, 5, 6 };
 
             switch (choice)
             {
@@ -159,6 +159,12 @@ namespace ConsoleApp
                     // sort.SelectionSort(unsortedArr);
                     // sort.BubbleSort(unsortedArr);
                     sort.InsertionSort(unsortedArr);
+                    break;
+
+                case "25":
+                    var rotate = new RotateArray();
+                    // rotate.rotateArrayByOne(numsList);
+                    rotate.LeftRotate(numsList,2);
                     break;
 
                 default:
