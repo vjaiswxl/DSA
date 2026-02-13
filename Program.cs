@@ -83,12 +83,14 @@ namespace ConsoleApp
 
                 case "11":
                     var Union = new UnionProblem();
-                    Union.Union();
+                    // Union.Union();
+                    Union.UnionSet();
                     break;
 
                 case "12":
                     var MissNum = new MissingNumProb();
-                    MissNum.MissingNumber(numsList);
+                    //MissNum.MissingNumber(numsList);
+                    MissNum.FindMising([1,2,4,5,6]);
                     break;
 
                 case "13":

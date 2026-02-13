@@ -46,6 +46,23 @@ namespace ConsoleApp.CodeClass
             }
 
             return numsHash[0];
-    }
+        }
+
+        //Optimal Approach
+        //The sum of the first n natural numbers is given by the formula (n * (n + 1)) / 2
+        public int FindMising(int[] arr)
+        {
+            int sum = arr.Sum();
+
+            int n = arr.Length +1; //use lenght +1 as we need to get the sum of all the first n numbers including the missing one
+
+            long expectedSum = (long)(n * (n + 1)) / 2; //use long to avoid overflow
+
+            int result = (int)(expectedSum - sum);
+
+            Console.WriteLine(result);
+
+            return result;
+        }
     }
 }
