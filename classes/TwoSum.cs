@@ -16,7 +16,7 @@ namespace ConsoleApp.CodeClass
                 if (numDict.ContainsKey(complement))
                 {
                   
-                    return new int[] { numDict[complement], i };
+                    return [numDict[complement], i];
                 }
 
                 if (!numDict.ContainsKey(nums[i]))
@@ -25,6 +25,33 @@ namespace ConsoleApp.CodeClass
                 }
             }
             return new int[0];
+        }
+
+        //Code for problem where asjed if a sum exists in the arr between two elements
+        //Use the two pointer approach
+        public string TwoSum_2P(int[] nums, int target)
+        {
+            Array.Sort(nums);
+            int n = nums.Length;
+            int left = 0;
+            int right = n-1;
+
+            while (left < right)
+            {
+                int sum = nums[left] + nums[right];
+                if (sum == target)
+                {
+                    return "Yes";
+                }else if (sum < target)
+                {
+                    left++;
+                } else
+                {
+                    right ++;
+                }
+            }
+
+            return "No";
         }
     }
     
